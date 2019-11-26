@@ -1,7 +1,7 @@
 package homeworks.string;
 
 
-import homework.string.ContentVerification;
+
 import homework.string.OperationWIthUserInput;
 import homework.string.ReadUserTextUtil;
 import homework.string.model.OperationsWithStringModel;
