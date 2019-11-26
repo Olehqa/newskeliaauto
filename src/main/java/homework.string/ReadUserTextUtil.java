@@ -17,8 +17,12 @@ public class ReadUserTextUtil {
             System.out.println("Wrong value!" + e.getMessage());
         }
 
-        if (sentence == null && sentence.length() == 0) {
-            System.out.println("your text is empty");
+        try {
+            if (sentence == null && sentence.length() == 0) {
+                System.out.println("your text is empty");
+            }
+        }catch (NullPointerException e){
+            System.out.println(e.getMessage());
         }
         return sentence;
     }
@@ -32,7 +36,7 @@ public class ReadUserTextUtil {
         try {
             symbol = (char) brChr.read();
             System.out.println("Your symbol is: '" + symbol + "'");
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Wrong value");
         }
 
