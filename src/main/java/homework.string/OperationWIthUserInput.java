@@ -164,7 +164,7 @@ public class OperationWIthUserInput {
         String reverse = " ";
 
 //        for (int i = userInput.length() - 1; i >= 0; i--) {
-////            reverse = reverse userInput.charAt(i);
+////            reverse = reverse+ userInput.charAt(i);
 //        }
 
         System.out.println("Reversed string is:");

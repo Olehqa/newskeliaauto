@@ -29,7 +29,7 @@ public class ReadUserTextUtil {
     }
 
 
-    public static char BufferedReaderChar() {
+     static char BufferedReaderChar() {
         char symbol = 0;
 
         BufferedReader brChr = new BufferedReader(new InputStreamReader(System.in));
