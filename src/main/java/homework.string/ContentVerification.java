@@ -2,11 +2,11 @@ package homework.string;
 
 public class ContentVerification {
 
-    boolean conditionsYesNo2 = false;
-    int countLetters2 = 0;
+
 
     public boolean verifyUserCharInput(String userSentenceInput, char symbolUserInput) {
-
+        boolean conditionsYesNo2;
+     int countLetters2 = 0;
         for (int i = 0; userSentenceInput.length() - 1 >= i; i++) {
             char charAt = userSentenceInput.charAt(i);
             if (charAt == symbolUserInput) {

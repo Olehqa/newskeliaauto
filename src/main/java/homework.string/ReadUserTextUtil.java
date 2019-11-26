@@ -22,7 +22,7 @@ public class ReadUserTextUtil {
             if (sentence == null || sentence.length() == 0) {
                 System.out.println("your text is empty");
             }
-        } catch (Exception e){
+        } catch (NullPointerException e){
             System.out.println(e.getMessage());
         }
         return sentence;
