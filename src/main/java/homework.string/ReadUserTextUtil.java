@@ -18,10 +18,11 @@ public class ReadUserTextUtil {
         }
 
         try {
-            if (sentence == null && sentence.length() == 0) {
+
+            if (sentence == null || sentence.length() == 0) {
                 System.out.println("your text is empty");
             }
-        }catch (NullPointerException e){
+        } catch (Exception e){
             System.out.println(e.getMessage());
         }
         return sentence;
