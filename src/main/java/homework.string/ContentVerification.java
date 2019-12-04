@@ -1,12 +1,12 @@
 package homework.string;
 
-public class ContentVerification {
+class ContentVerification {
 
 
 
-    public boolean verifyUserCharInput(String userSentenceInput, char symbolUserInput) {
+    boolean verifyUserCharInput(String userSentenceInput, char symbolUserInput) {
         boolean conditionsYesNo2;
-     int countLetters2 = 0;
+        int countLetters2 = 0;
         for (int i = 0; userSentenceInput.length() - 1 >= i; i++) {
             char charAt = userSentenceInput.charAt(i);
             if (charAt == symbolUserInput) {

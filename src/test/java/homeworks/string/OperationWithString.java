@@ -37,7 +37,7 @@ public class OperationWithString {
 
 //        System.out.println ("getSentence method 1 " + m.getSentence ());
 
-        model.setSentenceLength ( OperationWIthUserInput.textLength ( model.getSentence () ) );
+        model.setSentenceLength ( OperationWIthUserInput.getTextLength ( model.getSentence () ) );
 
         model.setCountLetters ( OperationWIthUserInput.countLetters ( model.getSentence () ) );
 
@@ -45,9 +45,9 @@ public class OperationWithString {
 
         model.setStringToArray ( OperationWIthUserInput.sentenceToArray ( model.getSentence () ) );
 
-        model.setTextFromTo ( OperationWIthUserInput.partOfSentence ( model.getSentence () ) );
+        model.setTextFromTo ( OperationWIthUserInput.getPartOfSentence ( model.getSentence () ) );
 
-        OperationWIthUserInput.indexOfSymbols ( model.getSentence () );
+        OperationWIthUserInput.getIndexOfSymbols ( model.getSentence () );
 
         model.setReverseSentence ( OperationWIthUserInput.viceVersa ( model.getSentence () ) );
 

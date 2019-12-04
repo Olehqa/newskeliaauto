@@ -6,7 +6,7 @@ public class OperationWIthUserInput {
      * Count letters on user inputs from console
      */
 
-    public static int textLength(String userInput) {
+    public static int getTextLength(String userInput) {
         System.out.println ( "Sentence length is: " + userInput.length () );
         System.out.println ();
 
@@ -19,8 +19,10 @@ public class OperationWIthUserInput {
 
     public static long countLetters(String userInput) {
         boolean containsOrNot;
-        ContentVerification contVerification1 = new ContentVerification ();
         int countLetters1 = 0;
+
+        ContentVerification contVerification1 = new ContentVerification ();
+
         System.out.println ( "Please Inset a symbol what should count: " );
         char symbol;
         do {
@@ -39,7 +41,6 @@ public class OperationWIthUserInput {
 
             }
         }
-
 
         System.out.println ( "There are " + countLetters1 + " of '" + symbol + "' symbol in your '"
                 + userInput + "' input " );
@@ -100,7 +101,7 @@ public class OperationWIthUserInput {
      * Trim a part of user input from letter1 to letter2
      */
 
-    public static String partOfSentence(String userInput) {
+    public static String getPartOfSentence(String userInput) {
         char firstSymbol;
         char lastSymbol;
         boolean containsYesNo2;
@@ -121,8 +122,8 @@ public class OperationWIthUserInput {
             containsYesNo3 = contVerification4.verifyUserCharInput ( userInput , firstSymbol );
             if (userInput.indexOf ( firstSymbol ) > userInput.lastIndexOf ( lastSymbol )) {
 
-                System.out.println ("Еhe last character is located earlier than the first." +
-                        " Please try again");
+                System.out.println ( "Еhe last character is located earlier than the first." +
+                        " Please try again" );
 
                 containsYesNo3 = false;
             }
@@ -143,7 +144,7 @@ public class OperationWIthUserInput {
      * Display index(es) of some symbol
      */
 
-    public static void indexOfSymbols(String userInput) {
+    public static void getIndexOfSymbols(String userInput) {
         ContentVerification contVer2 = new ContentVerification ();
         char symbolForIndex;
         boolean conditionYesNo5;
