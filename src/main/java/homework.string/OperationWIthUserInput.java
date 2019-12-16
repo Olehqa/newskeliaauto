@@ -108,29 +108,29 @@ public class OperationWIthUserInput {
     public static String getPartOfSentence(String userInput) {
         char firstSymbol;
         char lastSymbol;
-        boolean containsYesNo2;
-        boolean containsYesNo3;
-
+        boolean isFirstCharInsideText;
+        boolean isSecondCharInsideText;
+// one while per two characters
         System.out.println ( "Inset symbol from what should trim: " );
         do {
             firstSymbol = ReadUserTextUtil.getCharFromConsole ();
-            containsYesNo2 = ContentVerification.isCharPresent ( userInput , firstSymbol );
+            isFirstCharInsideText = ContentVerification.isCharPresent ( userInput , firstSymbol );
 
-        } while (!containsYesNo2);
+        } while (!isFirstCharInsideText);
 
         System.out.println ( "Inset symbol till what should trim: " );
         do {
             lastSymbol = ReadUserTextUtil.getCharFromConsole ();
-            containsYesNo3 = ContentVerification.isCharPresent ( userInput , firstSymbol );
+            isSecondCharInsideText = ContentVerification.isCharPresent ( userInput , firstSymbol );
             if (userInput.indexOf ( firstSymbol ) > userInput.lastIndexOf ( lastSymbol )) {
 
                 System.out.println ( "Еhe last character is located earlier than the first." +
                         " Please try again" );
 
-                containsYesNo3 = false;
+                isSecondCharInsideText = false;
             }
 
-        } while (!containsYesNo3);
+        } while (!isSecondCharInsideText);
 
 
         userInput = userInput.substring ( userInput.indexOf ( firstSymbol ) ,
@@ -147,16 +147,15 @@ public class OperationWIthUserInput {
      */
 
     public static void getIndexOfSymbols(String userInput) {
-        ContentVerification contVer2 = new ContentVerification ();
         char symbolForIndex;
-        boolean conditionYesNo5;
+        boolean isSymbolInText;
 
         System.out.println ( "Please insert symbol from what should return index(es) " );
 
         do {
             symbolForIndex = ReadUserTextUtil.getCharFromConsole ();
-            conditionYesNo5 = ContentVerification.isCharPresent( userInput , symbolForIndex );
-        } while (!conditionYesNo5);
+            isSymbolInText = ContentVerification.isCharPresent( userInput , symbolForIndex );
+        } while (!isSymbolInText);
 
         for (int s = -1; (s = userInput.indexOf ( symbolForIndex , s + 1 )) != -1; s++) {
             System.out.println ( "index(es) of the symbol() s - " + s );
@@ -173,9 +172,9 @@ public class OperationWIthUserInput {
 
         String reverse = "";
 
-//        for (int i = userInput.length() - 1; i >= 0; i--) {
-//            reverse = reverse + userInput.charAt(i);
-//        }
+        for (int i = userInput.length() - 1; i >= 0; i--) {
+            reverse = reverse + userInput.charAt(i);
+        }
 
         System.out.println ( "Reversed string is:" );
         System.out.println ( reverse );
