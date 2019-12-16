@@ -15,21 +15,17 @@ public class ReadUserTextUtil {
             sentence = brStr.readLine();
         } catch (IOException e) {
             System.out.println("Wrong value!" + e.getMessage());
+            System.exit(1);
+        }
+        if ( sentence.length() == 0) {
+            System.out.println("your text is empty");
         }
 
-        try {
-
-            if (sentence == null || sentence.length() == 0) {
-                System.out.println("your text is empty");
-            }
-        } catch (NullPointerException e){
-            System.out.println(e.getMessage());
-        }
         return sentence;
     }
 
 
-    public static char BufferedReaderChar() {
+    public static char getCharFromConsole() {// avoid null pointer when exception!
         char symbol = 0;
 
         BufferedReader brChr = new BufferedReader(new InputStreamReader(System.in));

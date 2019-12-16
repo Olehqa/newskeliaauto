@@ -19,32 +19,31 @@ public class OperationWIthUserInput {
 
     public static long countLetters(String userInput) {
         boolean containsOrNot;
-        ContentVerification contVerification1 = new ContentVerification();
-        int countLetters1 = 0;
+        int countLetters = 0;
         System.out.println("Please Inset a symbol what should count: ");
         char symbol;
         do {
 
-            symbol = ReadUserTextUtil.BufferedReaderChar();
-            containsOrNot = contVerification1.verifyUserCharInput(userInput, symbol);
+            symbol = ReadUserTextUtil.getCharFromConsole();
+            containsOrNot = ContentVerification.isCharPresent(userInput, symbol);
 
-        } while (!containsOrNot);
+        } while (!containsOrNot); // or ten times try
 
 
         for (int i = 0; userInput.length() - 1 >= i; i++) {
 
             char charAt = userInput.charAt(i);
             if (charAt == symbol) {
-                countLetters1++;
+                countLetters++;
 
             }
         }
 
 
-        System.out.println("There are " + countLetters1 + " of '" + symbol + "' symbol in your '"
+        System.out.println("There are " + countLetters + " of '" + symbol + "' symbol in your '"
                 + userInput + "' input ");
         System.out.println();
-        return countLetters1;
+        return countLetters;
     }
 
 
@@ -57,22 +56,22 @@ public class OperationWIthUserInput {
         char newSymbol;
 
         boolean containsYesNo1;
-        ContentVerification contVerification2 = new ContentVerification();
 
 
         System.out.println("Inset symbol what should change in this '" + userInput + "'" + " sentence");
 
         do {
-            oldSymbol = ReadUserTextUtil.BufferedReaderChar();
-            containsYesNo1 = contVerification2.verifyUserCharInput(userInput, oldSymbol);
+            oldSymbol = ReadUserTextUtil.getCharFromConsole();
+            containsYesNo1 = ContentVerification.isCharPresent(userInput, oldSymbol);
 
-        } while (!containsYesNo1);
+        } while (!containsYesNo1);//times
 
         System.out.println("Inset symbol to what should change: ");
 
-        newSymbol = ReadUserTextUtil.BufferedReaderChar();
+        newSymbol = ReadUserTextUtil.getCharFromConsole();
 
         System.out.println("old char: '" + oldSymbol + "'" + "; new char: '" + newSymbol + "'");
+// init new string for result and logging
 
         System.out.println("Sentence with changed symbols '" + userInput.replace(oldSymbol, newSymbol) + "'");
 
@@ -89,10 +88,11 @@ public class OperationWIthUserInput {
     public static char[] sentenceToArray(String userInput) {
 
         System.out.println("Sentence as array of chars -");
-        char[] StringToArr = userInput.toCharArray();
-        for (char output : StringToArr)
+        char[] userInputChars = userInput.toCharArray();
+        for (char output : userInputChars) {
             System.out.println(output);
-        return StringToArr;
+        }
+        return userInputChars;
     }
 
 
@@ -106,19 +106,17 @@ public class OperationWIthUserInput {
         boolean containsYesNo2;
         boolean containsYesNo3;
 
-        ContentVerification contVerification3 = new ContentVerification();
-        ContentVerification contVerification4 = new ContentVerification();
         System.out.println("Inset symbol from what should trim: ");
         do {
-            firstSymbol = ReadUserTextUtil.BufferedReaderChar();
-            containsYesNo2 = contVerification3.verifyUserCharInput(userInput, firstSymbol);
+            firstSymbol = ReadUserTextUtil.getCharFromConsole();
+            containsYesNo2 = ContentVerification.isCharPresent(userInput, firstSymbol);
 
-        } while (!containsYesNo2);
+        } while (!containsYesNo2);// times
 
         System.out.println("Inset symbol till what should trim: ");
         do {
-            lastSymbol = ReadUserTextUtil.BufferedReaderChar();
-            containsYesNo3 = contVerification4.verifyUserCharInput(userInput, firstSymbol);
+            lastSymbol = ReadUserTextUtil.getCharFromConsole();
+            containsYesNo3 = ContentVerification.isCharPresent(userInput, firstSymbol);
 
         } while (!containsYesNo3);
 
@@ -137,15 +135,14 @@ public class OperationWIthUserInput {
      */
 
     public static void indexOfSymbols(String userInput) {
-        ContentVerification contVer2 = new ContentVerification();
         char symbolForIndex;
         boolean conditionYesNo5;
 
         System.out.println("Please insert symbol from what should return index(es) ");
 
         do {
-            symbolForIndex = ReadUserTextUtil.BufferedReaderChar();
-            conditionYesNo5 = contVer2.verifyUserCharInput(userInput, symbolForIndex);
+            symbolForIndex = ReadUserTextUtil.getCharFromConsole();
+            conditionYesNo5 = ContentVerification.isCharPresent(userInput, symbolForIndex);
         } while (!conditionYesNo5);
 
         for (int s = -1; (s = userInput.indexOf(symbolForIndex, s + 1)) != -1; s++) {

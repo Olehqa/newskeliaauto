@@ -34,17 +34,25 @@ public class OperationWithString {
 
         new ReadUserTextUtil ();
         model.setSentence ( ReadUserTextUtil.getStringFromConsole () );
+
 //        System.out.println ("getSentence method 1 " + m.getSentence ());
+
         model.setSentenceLength ( OperationWIthUserInput.textLength ( model.getSentence () ) );
+
         model.setCountLetters ( OperationWIthUserInput.countLetters ( model.getSentence () ) );
 
         model.setChangeSymbolFromOldToNewOne ( OperationWIthUserInput.changeSymbolFromOldToNew ( model.getSentence () ) );
 
         model.setStringToArray ( OperationWIthUserInput.sentenceToArray ( model.getSentence () ) );
+
         model.setTextFromTo ( OperationWIthUserInput.partOfSentence ( model.getSentence () ) );
+
         OperationWIthUserInput.indexOfSymbols ( model.getSentence () );
+
         model.setReverseSentence ( OperationWIthUserInput.viceVersa ( model.getSentence () ) );
+
         model.setSmallLT ( OperationWIthUserInput.toLoverCase ( model.getSentence () ) );
+
         model.setBigLT ( OperationWIthUserInput.toUpperCase ( model.getSentence () ) );
 
     }
