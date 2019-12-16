@@ -19,8 +19,6 @@ public class OperationWIthUserInput {
 
     public static long countLetters(String userInput) {
         boolean containsOrNot;
-        int countLetters = 0;
-
         ContentVerification contVerification1 = new ContentVerification ();
 
         System.out.println ( "Please Inset a symbol what should count: " );
@@ -73,7 +71,7 @@ public class OperationWIthUserInput {
 
         System.out.println ( "Inset symbol to what should change: " );
 
-        newSymbol = ReadUserTextUtil.BufferedReaderChar ();
+        newSymbol = ReadUserTextUtil.getCharFromConsole ();
         newSymbol = ReadUserTextUtil.getCharFromConsole();
 
         System.out.println ( "old char: '" + oldSymbol + "'" + "; new char: '" + newSymbol + "'" );
@@ -113,19 +111,17 @@ public class OperationWIthUserInput {
         boolean containsYesNo2;
         boolean containsYesNo3;
 
-        ContentVerification contVerification3 = new ContentVerification ();
-        ContentVerification contVerification4 = new ContentVerification ();
         System.out.println ( "Inset symbol from what should trim: " );
         do {
-            firstSymbol = ReadUserTextUtil.BufferedReaderChar ();
-            containsYesNo2 = contVerification3.verifyUserCharInput ( userInput , firstSymbol );
+            firstSymbol = ReadUserTextUtil.getCharFromConsole ();
+            containsYesNo2 = ContentVerification.isCharPresent ( userInput , firstSymbol );
 
         } while (!containsYesNo2);
 
         System.out.println ( "Inset symbol till what should trim: " );
         do {
-            lastSymbol = ReadUserTextUtil.BufferedReaderChar ();
-            containsYesNo3 = contVerification4.verifyUserCharInput ( userInput , firstSymbol );
+            lastSymbol = ReadUserTextUtil.getCharFromConsole ();
+            containsYesNo3 = ContentVerification.isCharPresent ( userInput , firstSymbol );
             if (userInput.indexOf ( firstSymbol ) > userInput.lastIndexOf ( lastSymbol )) {
 
                 System.out.println ( "Еhe last character is located earlier than the first." +
@@ -158,8 +154,8 @@ public class OperationWIthUserInput {
         System.out.println ( "Please insert symbol from what should return index(es) " );
 
         do {
-            symbolForIndex = ReadUserTextUtil.BufferedReaderChar ();
-            conditionYesNo5 = contVer2.verifyUserCharInput ( userInput , symbolForIndex );
+            symbolForIndex = ReadUserTextUtil.getCharFromConsole ();
+            conditionYesNo5 = ContentVerification.isCharPresent( userInput , symbolForIndex );
         } while (!conditionYesNo5);
 
         for (int s = -1; (s = userInput.indexOf ( symbolForIndex , s + 1 )) != -1; s++) {
