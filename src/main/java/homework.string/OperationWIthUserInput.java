@@ -6,11 +6,11 @@ public class OperationWIthUserInput {
      * Count letters on user inputs from console
      */
 
-    public static int textLength(String userInput) {
-        System.out.println("Sentence length is: " + userInput.length());
-        System.out.println();
+    public static int getTextLength(String userInput) {
+        System.out.println ( "Sentence length is: " + userInput.length () );
+        System.out.println ();
 
-        return userInput.length();
+        return userInput.length ();
     }
 
     /**
@@ -19,6 +19,11 @@ public class OperationWIthUserInput {
 
     public static long countLetters(String userInput) {
         boolean containsOrNot;
+        int countLetters = 0;
+
+        ContentVerification contVerification1 = new ContentVerification ();
+
+        System.out.println ( "Please Inset a symbol what should count: " );
         int countLetters = 0;
         System.out.println("Please Inset a symbol what should count: ");
         char symbol;
@@ -58,26 +63,28 @@ public class OperationWIthUserInput {
         boolean containsYesNo1;
 
 
-        System.out.println("Inset symbol what should change in this '" + userInput + "'" + " sentence");
+        System.out.println ( "Inset symbol what should change in this '" + userInput + "'" + " sentence" );
 
         do {
-            oldSymbol = ReadUserTextUtil.getCharFromConsole();
-            containsYesNo1 = ContentVerification.isCharPresent(userInput, oldSymbol);
+            oldSymbol = ReadUserTextUtil.getCharFromConsole ();
+            containsYesNo1 = ContentVerification.isCharPresent ( userInput , oldSymbol );
 
         } while (!containsYesNo1);//times
 
-        System.out.println("Inset symbol to what should change: ");
+        System.out.println ( "Inset symbol to what should change: " );
 
+        newSymbol = ReadUserTextUtil.BufferedReaderChar ();
         newSymbol = ReadUserTextUtil.getCharFromConsole();
 
+        System.out.println ( "old char: '" + oldSymbol + "'" + "; new char: '" + newSymbol + "'" );
         System.out.println("old char: '" + oldSymbol + "'" + "; new char: '" + newSymbol + "'");
 // init new string for result and logging
 
-        System.out.println("Sentence with changed symbols '" + userInput.replace(oldSymbol, newSymbol) + "'");
+        System.out.println ( "Sentence with changed symbols '" + userInput.replace ( oldSymbol , newSymbol ) + "'" );
 
-        System.out.println();
+        System.out.println ();
 
-        return userInput.replace(oldSymbol, newSymbol);
+        return userInput.replace ( oldSymbol , newSymbol );
     }
 
 
@@ -87,10 +94,10 @@ public class OperationWIthUserInput {
 
     public static char[] sentenceToArray(String userInput) {
 
-        System.out.println("Sentence as array of chars -");
-        char[] userInputChars = userInput.toCharArray();
+        System.out.println ( "Sentence as array of chars -" );
+        char[] userInputChars = userInput.toCharArray ();
         for (char output : userInputChars) {
-            System.out.println(output);
+            System.out.println ( output );
         }
         return userInputChars;
     }
@@ -100,32 +107,41 @@ public class OperationWIthUserInput {
      * Trim a part of user input from letter1 to letter2
      */
 
-    public static String partOfSentence(String userInput) {
+    public static String getPartOfSentence(String userInput) {
         char firstSymbol;
         char lastSymbol;
         boolean containsYesNo2;
         boolean containsYesNo3;
 
-        System.out.println("Inset symbol from what should trim: ");
+        ContentVerification contVerification3 = new ContentVerification ();
+        ContentVerification contVerification4 = new ContentVerification ();
+        System.out.println ( "Inset symbol from what should trim: " );
         do {
-            firstSymbol = ReadUserTextUtil.getCharFromConsole();
-            containsYesNo2 = ContentVerification.isCharPresent(userInput, firstSymbol);
+            firstSymbol = ReadUserTextUtil.BufferedReaderChar ();
+            containsYesNo2 = contVerification3.verifyUserCharInput ( userInput , firstSymbol );
 
-        } while (!containsYesNo2);// times
+        } while (!containsYesNo2);
 
-        System.out.println("Inset symbol till what should trim: ");
+        System.out.println ( "Inset symbol till what should trim: " );
         do {
-            lastSymbol = ReadUserTextUtil.getCharFromConsole();
-            containsYesNo3 = ContentVerification.isCharPresent(userInput, firstSymbol);
+            lastSymbol = ReadUserTextUtil.BufferedReaderChar ();
+            containsYesNo3 = contVerification4.verifyUserCharInput ( userInput , firstSymbol );
+            if (userInput.indexOf ( firstSymbol ) > userInput.lastIndexOf ( lastSymbol )) {
+
+                System.out.println ( "Еhe last character is located earlier than the first." +
+                        " Please try again" );
+
+                containsYesNo3 = false;
+            }
 
         } while (!containsYesNo3);
 
 
-        userInput = userInput.substring(userInput.indexOf(firstSymbol),
-                userInput.lastIndexOf(lastSymbol) + 1);
+        userInput = userInput.substring ( userInput.indexOf ( firstSymbol ) ,
+                userInput.lastIndexOf ( lastSymbol ) + 1 );
 
-        System.out.println("Your trimed sentence is '" + userInput + "'");
-        System.out.println();
+        System.out.println ( "Your trimed sentence is '" + userInput + "'" );
+        System.out.println ();
 
         return userInput;
     }
@@ -134,21 +150,22 @@ public class OperationWIthUserInput {
      * Display index(es) of some symbol
      */
 
-    public static void indexOfSymbols(String userInput) {
+    public static void getIndexOfSymbols(String userInput) {
+        ContentVerification contVer2 = new ContentVerification ();
         char symbolForIndex;
         boolean conditionYesNo5;
 
-        System.out.println("Please insert symbol from what should return index(es) ");
+        System.out.println ( "Please insert symbol from what should return index(es) " );
 
         do {
-            symbolForIndex = ReadUserTextUtil.getCharFromConsole();
-            conditionYesNo5 = ContentVerification.isCharPresent(userInput, symbolForIndex);
+            symbolForIndex = ReadUserTextUtil.BufferedReaderChar ();
+            conditionYesNo5 = contVer2.verifyUserCharInput ( userInput , symbolForIndex );
         } while (!conditionYesNo5);
 
-        for (int s = -1; (s = userInput.indexOf(symbolForIndex, s + 1)) != -1; s++) {
-            System.out.println("index(es) of the symbol() s - " + s);
+        for (int s = -1; (s = userInput.indexOf ( symbolForIndex , s + 1 )) != -1; s++) {
+            System.out.println ( "index(es) of the symbol() s - " + s );
         }
-        System.out.println();
+        System.out.println ();
 
     }
 
@@ -158,16 +175,16 @@ public class OperationWIthUserInput {
 
     public static String viceVersa(String userInput) {
 
-        String reverse = " ";
+        String reverse = "";
 
 //        for (int i = userInput.length() - 1; i >= 0; i--) {
-////            reverse = reverse userInput.charAt(i);
+//            reverse = reverse + userInput.charAt(i);
 //        }
 
-        System.out.println("Reversed string is:");
-        System.out.println(reverse);
+        System.out.println ( "Reversed string is:" );
+        System.out.println ( reverse );
 
-        System.out.println();
+        System.out.println ();
         return reverse;
     }
 
@@ -176,8 +193,8 @@ public class OperationWIthUserInput {
      */
 
     public static String toLoverCase(String userInput) {
-        System.out.println("String to lover case '" + userInput.toLowerCase() + "'");
-        return userInput.toLowerCase();
+        System.out.println ( "String to lover case '" + userInput.toLowerCase () + "'" );
+        return userInput.toLowerCase ();
     }
 
 
@@ -185,7 +202,7 @@ public class OperationWIthUserInput {
      * Convert all the letters from user input to upper case
      */
     public static String toUpperCase(String userInput) {
-        System.out.println("String to upper case '" + userInput.toUpperCase() + "'");
-        return userInput.toUpperCase();
+        System.out.println ( "String to upper case '" + userInput.toUpperCase () + "'" );
+        return userInput.toUpperCase ();
     }
 }
