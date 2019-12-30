@@ -6,7 +6,7 @@ public class ContentVerification {
     public static boolean isCharPresent(String textToValidate, char lookingChar) {
         boolean presentsOfChar;
         int countLetters = 0;
-        for (int i = 0; i < textToValidate.length(); i++) {
+        for (int i = 0; textToValidate.length() > i; i++) {
             char charAt = textToValidate.charAt(i);
             if (charAt == lookingChar) {
                 countLetters++;

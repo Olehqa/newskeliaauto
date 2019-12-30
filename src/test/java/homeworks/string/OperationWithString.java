@@ -25,10 +25,10 @@ import homework.string.model.OperationsWithStringModel;
  */
 
 /**
-змінити методи на гет якщо вони щось вертають
-змінити безкінечні цикли
-перейменувати змінні і методи на логічні назви
-змінити вічні цикли
+ * DONE  змінити методи на гет якщо вони щось вертають
+ * DONE  змінити безкінечні цикли
+ * DONE перейменувати змінні і методи на логічні назви
+ * DONE змінити вічні цикли
 змінити метод трім щоб пеервірка велась на два символи і дозволяла ввесит знову перший символ при помилці
 
 
@@ -61,21 +61,21 @@ public class OperationWithString {
 
         model.setSentenceLength ( OperationWIthUserInput.getTextLength ( model.getSentence () ) );
 
-        model.setCountLetters ( OperationWIthUserInput.countLetters ( model.getSentence () ) );
+        model.setCountLetters ( OperationWIthUserInput.getNumberOfSymbols ( model.getSentence () ) );
 
-        model.setChangeSymbolFromOldToNewOne ( OperationWIthUserInput.changeSymbolFromOldToNew ( model.getSentence () ) );
+        model.setChangeSymbolFromOldToNewOne ( OperationWIthUserInput.getChangedSentenceWithNewSymbols ( model.getSentence () ) );
 
-        model.setStringToArray ( OperationWIthUserInput.sentenceToArray ( model.getSentence () ) );
+        model.setStringToArray ( OperationWIthUserInput.getArrOfCharsFromSentence ( model.getSentence () ) );
 
         model.setTextFromTo ( OperationWIthUserInput.getPartOfSentence ( model.getSentence () ) );
 
-        OperationWIthUserInput.getIndexOfSymbols ( model.getSentence () );
+        OperationWIthUserInput.indexOfSymbols ( model.getSentence () );
 
-        model.setReverseSentence ( OperationWIthUserInput.viceVersa ( model.getSentence () ) );
+        model.setReverseSentence ( OperationWIthUserInput.getSentenceViseVersa ( model.getSentence () ) );
 
-        model.setSmallLT ( OperationWIthUserInput.toLoverCase ( model.getSentence () ) );
+        model.setSmallLT ( OperationWIthUserInput.getSentenceToLoverCase ( model.getSentence () ) );
 
-        model.setBigLT ( OperationWIthUserInput.toUpperCase ( model.getSentence () ) );
+        model.setBigLT ( OperationWIthUserInput.getSentenceToUpperCase ( model.getSentence () ) );
 
     }
 }
