@@ -6,7 +6,7 @@ public class CompanyModel {
     private int numbersOfEmployee;
     private int companyAge;
 
-    
+
 
 
     public String getNameOfTheCompany() {
