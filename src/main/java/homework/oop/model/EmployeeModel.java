@@ -1,10 +1,15 @@
-package homework1.company.model;
+package homework.oop.model;
 
 public class EmployeeModel extends HumanModel {
     private String qualificationOfEmployee;
-    private int yearsOfExperienceOfEmployee;
+    private int yearsOfExperienceOfEmployee; //(update to start of Career )
+    //start at this company hiring date
+    //add salary day and function to say how long to wait for salary, latest salary days ago
+    //amount os salaries from hiring date
     private int salaryOfEmployee;
     private String educationOfEmployee;
+
+    // функцію щоб просто про працівника і дженерал, де є і про працівника і про людтну)
 
     public EmployeeModel(String qualificationOfEmployee , int yearsOfExperienceOfEmployee , int salaryOfEmployee , String educationOfEmployee) {
         this.qualificationOfEmployee = qualificationOfEmployee;

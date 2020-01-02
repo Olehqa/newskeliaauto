@@ -1,21 +1,20 @@
-package homework1.company.model;
+package homework.oop.model;
 
-/** Задачка
-
-        треба написати такі класи:
-        людина
-        працівник
-        компанія
-        поля довільні  просто логічно  функції поки що теж тдовільні
-
+/**
+ * конструктор з всіма параметрами
+ * * конструктор з іменами( всі інші параметри приймають значення по замовчуванню
+ * додати функцію яка буде формувати підпис людини
+ * формувати маленьку біографію
+ *
  */
 
 public class HumanModel {
 
     private String nameOfHuman;
     private String secondNameOfHuman;
-    private int ageOfHuman;
+    private int ageOfHuman; //update to birth day (Date) and add function to return age
     private String sexOfHuman;
+    private String nationalityOfHuman;
 
     public String getNameOfHuman() {
         return nameOfHuman;
@@ -56,8 +55,6 @@ public class HumanModel {
     public void setNationalityOfHuman(String nationalityOfHuman) {
         this.nationalityOfHuman = nationalityOfHuman;
     }
-
-    String nationalityOfHuman;
 
 
 }
