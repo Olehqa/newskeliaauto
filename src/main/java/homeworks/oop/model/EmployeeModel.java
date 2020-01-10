@@ -11,7 +11,7 @@ public class EmployeeModel extends HumanModel {
 
 
     public EmployeeModel() {
-        super ("Human", "Humanovush");
+        super ( "Human" , "Humanovush" );
     }
 
 // функцію щоб просто про працівника і дженерал, де є і про працівника і про людтну)

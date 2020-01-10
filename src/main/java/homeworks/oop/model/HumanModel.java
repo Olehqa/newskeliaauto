@@ -39,11 +39,11 @@ public class HumanModel {
         this.age = age;
     }
 
-    public String signature(String firstName, String secondName){
+    public String signature(String firstName , String secondName) {
         String signatureOfHuman = null;
-        if(firstName==null && secondName == null) {
-            System.out.println ("Name is empty");
-        }else{ 
+        if (firstName == null && secondName == null) {
+            System.out.println ( "Name is empty" );
+        } else {
             signatureOfHuman = firstName.charAt ( 0 ) + "." + secondName;
         }
         return signatureOfHuman;
