@@ -2,9 +2,7 @@ package homeworks.string;
 
 
 
-import homework.string.OperationWIthUserInput;
-import homework.string.ReadUserTextUtil;
-import homework.string.model.OperationsWithStringModel;
+import homeworks.string.model.OperationsWithStringModel;
 
 /**
  * HomeworkString.OperationWithString

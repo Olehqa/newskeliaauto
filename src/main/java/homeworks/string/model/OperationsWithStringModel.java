@@ -1,4 +1,4 @@
-package homework.string.model;
+package homeworks.string.model;
 
 public class OperationsWithStringModel {
 

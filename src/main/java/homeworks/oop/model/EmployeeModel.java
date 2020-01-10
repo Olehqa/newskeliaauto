@@ -1,4 +1,4 @@
-package homework.oop.model;
+package homeworks.oop.model;
 
 public class EmployeeModel extends HumanModel {
     private String qualificationOfEmployee;
@@ -9,9 +9,15 @@ public class EmployeeModel extends HumanModel {
     private int salaryOfEmployee;
     private String educationOfEmployee;
 
-    // функцію щоб просто про працівника і дженерал, де є і про працівника і про людтну)
+
+    public EmployeeModel() {
+        super ("Human", "Humanovush");
+    }
+
+// функцію щоб просто про працівника і дженерал, де є і про працівника і про людтну)
 
     public EmployeeModel(String qualificationOfEmployee , int yearsOfExperienceOfEmployee , int salaryOfEmployee , String educationOfEmployee) {
+        super ("Ivan", "Ivanovuch");
         this.qualificationOfEmployee = qualificationOfEmployee;
         this.yearsOfExperienceOfEmployee = yearsOfExperienceOfEmployee;
         this.salaryOfEmployee = salaryOfEmployee;
@@ -19,10 +25,15 @@ public class EmployeeModel extends HumanModel {
     }
 
     public EmployeeModel(String qualificationOfEmployee , int yearsOfExperienceOfEmployee , String educationOfEmployee) {
+        super ("Vasyl", "Vasulovuch");
         this.qualificationOfEmployee = qualificationOfEmployee;
         this.yearsOfExperienceOfEmployee = yearsOfExperienceOfEmployee;
         this.educationOfEmployee = educationOfEmployee;
     }
+
+
+
+
 
     public String getQualificationOfEmployee() {
         return qualificationOfEmployee;

@@ -1,4 +1,4 @@
-package homework.string;
+package homeworks.string;
 
 public class OperationWIthUserInput {
 

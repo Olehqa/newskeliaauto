@@ -1,4 +1,4 @@
-package homework.oop.model;
+package homeworks.oop.model;
 
 public class CompanyModel {
 
@@ -10,8 +10,7 @@ public class CompanyModel {
 
     // функцію щоб виволила всі дані про компанію і про всіх працівників, ( два формати, офіційний коли суто про роботу, і не офіціійний деталі про людину ітселф)
     public String getNameOfTheCompany() {
-        HumanModel humanModel= new HumanModel();
-        humanModel=new HumanModel();
+
         return nameOfTheCompany;
     }
 
