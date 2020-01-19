@@ -8,15 +8,16 @@ import java.time.LocalDate;
 public class CreateCompany {
     public static void main(String[] args) {
         CompanyModel company = new CompanyModel ();
-        EmployeeModel employee = new EmployeeModel ( "I" , "educ" );
-        System.out.println ( employee.getAge () );
-        System.out.println ( employee.signature () );
-        System.out.println ( employee.getStartOfCarrier (  ) );
-        System.out.println ( employee.getStartOfCarrierInCompany (  ) );
 
-        employee.getDaysToFromSalary ( 10 );
 
-        System.out.println ( "amout of salary " + employee.getAmountOfSalaryFormHiringDate ( LocalDate.of ( 2018 , 1 , 10 ) , 1000 ) );
+////        EmployeeModel employee = new EmployeeModel ();
+//        System.out.println ( employee.signature () );
+//        System.out.println ( employee.getStartOfCarrier (  ) );
+//        System.out.println ( employee.getStartOfCarrierInCompany (  ) );
+//
+//        employee.getDaysToFromSalary ( 10 );
+
+//        System.out.println ( "amout of salary " + employee.getAmountOfSalaryFormHiringDate ( LocalDate.of ( 2018 , 1 , 10 ) , 1000 ) );
         System.out.println ( "age of company is " + company.getAgeOfCompany ( LocalDate.of ( 2010 , 10 , 10 ) ) );
     }
 }

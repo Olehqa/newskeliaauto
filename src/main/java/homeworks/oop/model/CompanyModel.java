@@ -23,9 +23,9 @@ public class CompanyModel {
 
     private LocalDate companyFounded;
 
-    LocalDate date= ;
+
     //TODO: use array usual for employee []
-    EmployeeModel employee = new EmployeeModel ("Ira","Rak",1991,7,24,"F","n","")
+//    EmployeeModel employee = new EmployeeModel ("Ira","Rak",1991,7,24,"F","n","");
 
 //    String firstName , String secondName ,
 //    int year , int month , int day , String sex ,
