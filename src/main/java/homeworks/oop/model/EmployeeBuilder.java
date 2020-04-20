@@ -1,82 +1,61 @@
-package homeworks.oop.model;
-
-import java.time.LocalDate;
-import java.time.MonthDay;
-
-public class EmployeeBuilder extends HumanBuilder {
-
-
-    private String qualification;
-    private LocalDate hiringDate;
-    private LocalDate startOfCarrier;
-    private MonthDay dayOfSalary;
-    private int salary;
-    private String educationOfEmployee;
-
-
-
-
-
-    public EmployeeBuilder qualification(final String qualification) {
-        this.qualification = qualification;
-        return this;
-    }
-
-
-    public EmployeeBuilder hiringDate(final LocalDate hiringDate) {
-        this.hiringDate = hiringDate;
-        return this;
-    }
-
-
-    public EmployeeBuilder startOfCarrier(final LocalDate startOfCarrier) {
-        this.startOfCarrier = startOfCarrier;
-        return this;
-    }
-
-
-    public EmployeeBuilder dayOfSalary(final MonthDay dayOfSalary) {
-        this.dayOfSalary = dayOfSalary;
-        return this;
-    }
-
-
-    public EmployeeBuilder salary(final int salary) {
-        this.salary = salary;
-        return this;
-    }
-
-
-    public EmployeeBuilder educationOfEmployee(final String educationOfEmployee) {
-        this.educationOfEmployee = educationOfEmployee;
-        return this;
-    }
-
-    public String getQualification() {
-        return qualification;
-    }
-
-    public LocalDate getHiringDate() {
-        return hiringDate;
-    }
-
-    public LocalDate getStartOfCarrier() {
-        return startOfCarrier;
-    }
-
-    public MonthDay getDayOfSalary() {
-        return dayOfSalary;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    public String getEducationOfEmployee() {
-        return educationOfEmployee;
-    }
-
-    public EmployeeBuilder (HumanBuilder humanBuilder) {
-        super ( humanBuilder );}
-
-}
+//package homeworks.oop.model;
+//
+//import java.time.LocalDate;
+//import java.time.MonthDay;
+//
+//public class EmployeeBuilder{
+//
+//
+//    private String qualificationB;
+//    private LocalDate hiringDateB;
+//    private LocalDate startOfCarrierB;
+//    private MonthDay dayOfSalaryB;
+//    private int salaryB;
+//    private String educationOfEmployeeB;
+//
+//    public EmployeeBuilder qualification(String qualificationB) {
+//        this.qualificationB = qualificationB;
+//        return this;
+//    }
+//
+//    public EmployeeBuilder hiringDateB( LocalDate hiringDateB) {
+//        this.hiringDateB = hiringDateB;
+//        return this;
+//    }
+//
+//    public EmployeeBuilder startOfCarrier( LocalDate startOfCarrier) {
+//        this.startOfCarrierB = startOfCarrierB;
+//        return this;
+//    }
+//
+//
+//    public EmployeeBuilder dayOfSalary( MonthDay dayOfSalaryB) {
+//        this.dayOfSalaryB = dayOfSalaryB;
+//        return this;
+//    }
+//
+//    public EmployeeBuilder salary( int salaryB) {
+//        this.salaryB = salaryB;
+//        return this;
+//    }
+//
+//    public EmployeeBuilder educationOfEmployee(final String educationOfEmployeeB) {
+//        this.educationOfEmployeeB = educationOfEmployeeB;
+//        return this;
+//    }
+//
+//
+////    public EmployeeModel build() {
+////        EmployeeModel employeeModel = new EmployeeModel (  );
+////        employeeModel.setQualification ( qualificationB );
+////        employeeModel.setHiringDate ( hiringDateB );
+////        employeeModel.setStartOfCarrier (startOfCarrierB  );
+////        employeeModel.setDayOfSalary ( dayOfSalaryB );
+////        employeeModel.setSalary ( salaryB );
+////        employeeModel.setQualification ( educationOfEmployeeB );
+////
+////        return employeeModel;
+////
+////    }
+//
+//    }
