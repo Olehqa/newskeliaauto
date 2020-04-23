@@ -3,6 +3,8 @@ package homeworks.foursection.date.example;
 import java.time.LocalDate;
 import java.util.Date;
 
+import org.joda.time.DateTime;
+
 public class ExampleDate {
 
     private int age(Date dateOfBirth) { //TODO:  full years count  ---
@@ -17,11 +19,11 @@ public class ExampleDate {
 
     public static void main(String[] args) {
 
-        Date dateOfBirth1 = new Date ( 1990 , 4 , 17 );
-        ExampleDate ex = new ExampleDate ();
-        System.out.println ( ex.age ( dateOfBirth1 ) );
-
-        LocalDate now = LocalDate.now ();
-        System.out.println ( "current date: " + now + " formated: " + now.getYear () + "-" + now.getMonthValue () + "-" + now.getDayOfMonth () );
+//        Date dateOfBirth1 = new Date ( 1990 , 4 , 17 );
+//        ExampleDate ex = new ExampleDate ();
+//        System.out.println ( ex.age ( dateOfBirth1 ) );
+//        DateTime scheduleDate;
+        DateTime now = DateTime.now ();
+        System.out.println ( "current date: " + now + " formated: " + now.getYear () + "-" + now.getDayOfMonth () + "-" + now.getDayOfMonth () );
     }
 }
