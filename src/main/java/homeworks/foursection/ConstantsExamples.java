@@ -6,6 +6,7 @@ public class ConstantsExamples {
     double ty = Math.PI;
 
 
+
     class InnerConstandsExamples{
         ConstantsExamples ce = new ConstantsExamples ();
         int a = ce.NEW_PRIVATE_CONSTANT;

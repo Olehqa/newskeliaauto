@@ -7,22 +7,23 @@ import org.joda.time.DateTime;
 
 public class ExampleDate {
 
-    private int age(Date dateOfBirth) { //TODO:  full years count  ---
+    private static int age(Date dateOfBirth) { //TODO:  full years count  ---
+        int yearStartCount = 1900;
 
         Date now = new Date ();
-        System.out.println ( "in method: " + now.getMonth () );
+//        System.out.println ( "in method: " + now.getMonth () );
         if (now.getMonth () + 1 >= dateOfBirth.getMonth () && now.getDate () >= dateOfBirth.getDate ()) {
-            return now.getYear () - dateOfBirth.getYear () + 1900;
+            return now.getYear () - dateOfBirth.getYear () + yearStartCount;
         }
-        return now.getYear () - dateOfBirth.getYear () + 1900 - 1;
+        return now.getYear () - dateOfBirth.getYear () + yearStartCount - 1;
     }
 
     public static void main(String[] args) {
 
-//        Date dateOfBirth1 = new Date ( 1990 , 4 , 17 );
-//        ExampleDate ex = new ExampleDate ();
-//        System.out.println ( ex.age ( dateOfBirth1 ) );
-//        DateTime scheduleDate;
+        Date dateOfBirth = new Date ( 1990 , 4 , 23 );
+
+        System.out.println ( age ( dateOfBirth ) );
+        DateTime scheduleDate;
         DateTime now = DateTime.now ();
         System.out.println ( "current date: " + now + " formated: " + now.getYear () + "-" + now.getDayOfMonth () + "-" + now.getDayOfMonth () );
     }

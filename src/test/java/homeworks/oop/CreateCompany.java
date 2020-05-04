@@ -1,6 +1,5 @@
 package homeworks.oop;
 
-
 import homeworks.oop.model.CompanyModel;
 import homeworks.oop.model.EmployeeModel;
 
@@ -8,15 +7,9 @@ import homeworks.oop.model.Sex;
 
 import java.time.LocalDate;
 
-
-
-
-
 public class CreateCompany {
 
-
     public static void main(String[] args) {
-
 
         EmployeeModel employeeNumber1 = (EmployeeModel) new EmployeeModel().builder
                 .firstName ( "hello" )
@@ -46,10 +39,10 @@ public class CreateCompany {
                 .build ();
 
 
- CompanyModel skelia = new CompanyModel ("Skelia");
-         skelia.addEmployee ( employeeNumber1 );
-        skelia.addEmployee ( employeeNumber2 );
-        skelia.addEmployee ( employeeNumber3 );
+ CompanyModel skelia1= new CompanyModel ("Skelia");
+         skelia1.addEmployee ( employeeNumber1 );
+        skelia1.addEmployee ( employeeNumber2 );
+        skelia1.addEmployee ( employeeNumber3 );
 
         System.out.println (employeeNumber1.getFirstName ());
 

@@ -1,31 +1,31 @@
 package homeworks.foursection.agregation;
 
-import javax.naming.Name;
+class Employee {
 
-public class Employee {
+    private String name;
+    private String secondName;
 
-    String name = "";
-
-
-
-    String secondName = "";
-
-    public Employee(){
-           }
-    public Employee(String name){
-    }
-    public Employee(String name, String secondName){
+    public Employee() {
     }
 
+    public Employee(String name) {
+        this.name = name;
+    }
 
-    public String getSecondName() {
+    public Employee(String name , String secondName) {
+        this.name = name;
+        this.secondName = secondName;
+    }
+
+    String getSecondName() {
         return secondName;
     }
 
     public void setSecondName(String secondName) {
         this.secondName = secondName;
     }
-    public String getName() {
+
+    String getName() {
         return name;
     }
 

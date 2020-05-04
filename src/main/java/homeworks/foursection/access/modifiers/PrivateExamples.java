@@ -5,7 +5,6 @@ public class PrivateExamples {
     public static void main(String[] args) {
         PrivateExamples pec = new PrivateExamples ();
         pec.newMethod();
-
     }
 
 
@@ -16,7 +15,6 @@ public class PrivateExamples {
     void newMethod() {
         ProtectedExamples pe = new ProtectedExamples ();
         pe.protectedMethodExample ();
-
     }
 
     class InnerPrivateExamplesClass {
