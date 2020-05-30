@@ -9,6 +9,9 @@ public class SomeMen {
         this.pushUps = pushUps;
     }
 
+    public SomeMen() {
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -29,7 +32,6 @@ public class SomeMen {
 class Spotzal {
     public static void main(String[] args) {
 
-
         SomeMen kep = new SomeMen ( "Macalan" , 50 );
         SomeMen potc = new SomeMen ( "Nalacam" , 5 );
 
@@ -38,11 +40,21 @@ class Spotzal {
 
         System.out.println ( "changed value of pushUps " + increasePushUps ( 40 , kep ).getPushUps () );
 
+        SomeMen kep2;
+        SomeMen kep3;
+
         kep = increasePushUps ( 30 , kep );
+        kep2 = kep;
+//        kep3 = 89;
 
         System.out.println ( "changed value of push ups with assignment for " + kep.getFirstName () + ", " + kep.getPushUps () );
 
-        newSomeMen ( "Macalanius", 40, kep );
+        System.out.println ( "Kep2 " + kep2.getFirstName () + ", " + kep2.getPushUps () );
+        System.out.println ();
+
+        newSomeMen ( "Macalanius" , 40 , kep );
+        System.out.println ();
+
         System.out.println ( " changed with newSomeMen: " + kep.getFirstName () + ", " + kep.getPushUps () );
 
         changeName ( potc , "Magda" );
@@ -54,8 +66,9 @@ class Spotzal {
         return x;
     }
 
-    private static SomeMen newSomeMen( String name, int number , SomeMen y) {
-        return y = new SomeMen ( name , number );
+    private static SomeMen newSomeMen(String name , int number , SomeMen y) {
+        y = new SomeMen ( name , number );
+        return y;
     }
 
     private static void changeName(SomeMen x , String newName) {
