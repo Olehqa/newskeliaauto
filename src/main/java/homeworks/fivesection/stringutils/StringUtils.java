@@ -39,7 +39,7 @@ public class StringUtils {
         } else {
             System.out.print ( "Email invalid due to OWASP \n" );
         }
-        
+
         if (isValidEmailAddressByJavaLibrary ( email )) {
             System.out.print ( "Yes, email valid" );
         } else {
