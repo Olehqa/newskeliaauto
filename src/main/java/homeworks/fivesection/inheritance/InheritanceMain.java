@@ -3,14 +3,20 @@ package homeworks.fivesection.inheritance;
 public class InheritanceMain {
 
     public static void main(String[] args) {
-        Human hum = new Student ( "Manu" , "Pkiao" );
-        Human hum2 = new Employee ( "Alice" , "Kimble" , "oldProfession" );
+        AbstractHuman hum = new Student ( "Manu" , "Pkiao" );
+        AbstractHuman hum2 = new Employee ( "Alice" , "Kimble" , "oldProfession" );
 
-        Human humanAbs = new Human () {
+        AbstractHuman humanAbs = new AbstractHuman () {
             @Override
             public String getBio() {
-                return null;//for what it should be used
+                System.out.println ( "Bio from overrated method from abstract" );
+                return null;
             }
         };
+
+        humanAbs.getBio ();
+        System.out.println ( hum.getFirstName () );
+        System.out.println ( hum.getBio () );
+        System.out.println ( hum2.getBio () );
     }
 }

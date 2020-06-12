@@ -1,43 +1,39 @@
 package homeworks.fivesection.inheritance;
 
-import com.sun.javafx.binding.StringFormatter;
+public final class Student extends AbstractHuman {
 
-public final class Student extends Human {
-
-    private String firstName;
-    private String secondName;
-    private String nativeLanguage;
     private String speciality;
     private String groupName;
     private int course;
 
+    public Student() {
+        super ();
+    }
+
     public Student(String firstName , String secondName) {
+        super ( firstName , secondName );
     }
 
     public Student(String firstName , String secondName , String speciality , String groupName , int course) {
-    }
-
-    public Student(String firstName , String secondName , String nativeLanguage , String speciality , String groupName , int course) {
+        super ( firstName , secondName );
+        this.speciality = speciality;
+        this.groupName = groupName;
+        this.course = course;
     }
 
     @Override
     public String getFirstName() {
-        return firstName;
+        return super.getFirstName ();
     }
 
     @Override
-    public String getSecondName() {
-        return secondName;
+    public String getLastName() {
+        return super.getLastName ();
     }
 
     @Override
     public String getNativeLanguage() {
-        return nativeLanguage;
-    }
-
-    public String getBio() {
-
-        return String.format ( "The bio should not so long for \n , \n" , getFirstName () , getSecondName () );
+        return super.getNativeLanguage ();
     }
 
     public String getSpeciality() {
@@ -52,16 +48,19 @@ public final class Student extends Human {
         return course;
     }
 
+    @Override
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        super.setFirstName ( firstName );
     }
 
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
+    @Override
+    public void setLastName(String lastName) {
+        super.setLastName ( lastName );
     }
 
+    @Override
     public void setNativeLanguage(String nativeLanguage) {
-        this.nativeLanguage = nativeLanguage;
+        super.setNativeLanguage ( nativeLanguage );
     }
 
     public void setSpeciality(String speciality) {
@@ -76,5 +75,8 @@ public final class Student extends Human {
         this.course = course;
     }
 
-
+    @Override
+    public String getBio() {
+        return String.format ( "The bio of student should not be so long for %s, %s" , getFirstName () , getLastName () );
+    }
 }
