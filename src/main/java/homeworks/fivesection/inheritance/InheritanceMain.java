@@ -18,5 +18,11 @@ public class InheritanceMain {
         System.out.println ( hum.getFirstName () );
         System.out.println ( hum.getBio () );
         System.out.println ( hum2.getBio () );
+
+        if (hum.equals ( hum2 )) {
+            System.out.println ( "Object are equal" );
+        } else {
+            System.out.println ( "Object are not equal" );
+        }
     }
 }

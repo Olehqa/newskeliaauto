@@ -1,5 +1,7 @@
 package homeworks.fivesection.inheritance;
 
+import java.util.Objects;
+
 public final class Student extends AbstractHuman {
 
     private String speciality;
@@ -78,5 +80,24 @@ public final class Student extends AbstractHuman {
     @Override
     public String getBio() {
         return String.format ( "The bio of student should not be so long for %s, %s" , getFirstName () , getLastName () );
+    }
+
+    public boolean equals(Object otherObject) {
+
+        if (this == otherObject) {
+            return true;
+        }
+
+        if (otherObject == null) {
+            return false;
+        }
+
+        if (getClass () != otherObject.getClass ()) {
+            return false;
+        }
+
+        Student other = (Student) otherObject;
+
+        return Objects.equals ( getFirstName () , other.getFirstName () ) && Objects.equals ( getLastName () , other.getLastName () );
     }
 }
