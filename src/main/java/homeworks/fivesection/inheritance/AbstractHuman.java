@@ -8,14 +8,14 @@ package homeworks.fivesection.inheritance;
 
 public abstract class AbstractHuman {
 
-    private String firstName;
-    private String lastName;
-    private String nativeLanguage;
+    String firstName;
+    String lastName;
+    String nativeLanguage;
 
-    public AbstractHuman() {
+    AbstractHuman() {
     }
 
-    public AbstractHuman(String firstName , String secondName) {
+    AbstractHuman(String firstName , String secondName) {
         this.firstName = firstName;
         this.lastName = secondName;
     }

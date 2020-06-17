@@ -82,22 +82,23 @@ public final class Student extends AbstractHuman {
         return String.format ( "The bio of student should not be so long for %s, %s" , getFirstName () , getLastName () );
     }
 
-    public boolean equals(Object otherObject) {
+    public boolean equals(Object otherStudent) {
 
-        if (this == otherObject) {
+        if (this == otherStudent) {
             return true;
         }
 
-        if (otherObject == null) {
+        if (otherStudent == null) {
             return false;
         }
 
-        if (getClass () != otherObject.getClass ()) {
+        if (getClass () != otherStudent.getClass ()) {
             return false;
         }
 
-        Student other = (Student) otherObject;
-
-        return Objects.equals ( getFirstName () , other.getFirstName () ) && Objects.equals ( getLastName () , other.getLastName () );
+        Student other = (Student) otherStudent;
+        return getFirstName ().equals ( other.getFirstName () ) && getLastName ().equals ( other.getFirstName () )
+                && getSpeciality ().equals ( other.getSpeciality () ) && getGroupName ().equals ( other.getGroupName () )
+                && getCourse () == (other.getCourse ());
     }
 }

@@ -1,134 +1,35 @@
 package homeworks.fivesection.arrays;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-
 public class SortingArrays {
 
-    public static int userInputsFromConsole = 0;
-    public static String more;
-    public static int sortedNumbers;
-    public static boolean conditionsYesNo;
-    public static String ascOrDesc;
-
-
-    public static void main(String[] args) {
-
-        sortArray ();
-
+    static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        int temp = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j < (n - i); j++) {
+                if (arr[j - 1] > arr[j]) {
+                    temp = arr[j - 1];
+                    arr[j - 1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
     }
 
-    /*Sorting digits to arr  */
-    public static int sortArray() {
+    public static void main(String[] args) {
+        int arr[] = {3 , 60 , 35 , 2 , 45 , 320 , 5};
 
-        /*Reading from user inputs and validate*/
-        do {
-            BufferedReader br = new BufferedReader ( new InputStreamReader ( System.in ) );
-            System.out.println ( "Please insert several digits for sorting:" );
+        System.out.println ( "Array Before Bubble Sort" );
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print ( arr[i] + " " );
+        }
+        System.out.println ();
 
-            try {
-                userInputsFromConsole = Integer.parseInt ( br.readLine () );
-                System.out.println ( userInputsFromConsole );
-            } catch (IOException e) {
+        bubbleSort ( arr );
 
-                System.out.println ( "You can type only digits! Please type Yes(Y) for retry ?" );
-            }
-
-            if (userInputsFromConsole > 0) {
-
-                System.out.println ( "You digits for sorting " + userInputsFromConsole );
-
-
-                String strNumber = userInputsFromConsole + "";
-
-                System.out.println ( "howDigitsLooks on String = " + strNumber );
-
-                int[] arrayOfNumbers = new int[strNumber.length ()];
-
-                int index = 0;
-                System.out.println ( "How arrays looks in int " );
-                for (char c : strNumber.toCharArray ()) {
-
-                    arrayOfNumbers[index++] = Integer.parseInt ( c + "" );
-                    System.out.print ( c );
-                }
-                System.out.println ();
-
-                do {
-                    System.out.println ( "Please choose how to sort: ASC type (a) or DESC type (d) " );
-                    try {
-                        ascOrDesc = br.readLine ();
-                    } catch (IOException e) {
-                        conditionsYesNo = false;
-                        System.out.println ( "Wrong value please retry" );
-
-                    }
-
-                    /*Sorting by ASC*/
-                    if (ascOrDesc.equalsIgnoreCase ( "a" )) {
-                        conditionsYesNo = true;
-                        System.out.println ( "Lets sort ASC" );
-                        int povtoriv = 0;
-                        boolean vidbulasZamina = true;
-                        while (vidbulasZamina) {
-                            vidbulasZamina = false;
-                            for (int i = 0; i < arrayOfNumbers.length - 1 - povtoriv; i++) {
-                                if (arrayOfNumbers[i] > arrayOfNumbers[i + 1]) {
-                                    int temporaryVariable = arrayOfNumbers[i];
-                                    arrayOfNumbers[i] = arrayOfNumbers[i + 1];
-                                    arrayOfNumbers[i + 1] = temporaryVariable;
-                                    vidbulasZamina = true;
-                                }
-                            }
-                            povtoriv++;
-
-                        }
-                        for (int i : arrayOfNumbers) {
-                            System.out.print ( i + " " );
-                        }
-                        /*Sorting by DESC*/
-                    } else if (ascOrDesc.equalsIgnoreCase ( "d" )) {
-                        conditionsYesNo = true;
-                        System.out.println ( "Lets sort DESC" );
-                        int povtoriv = 0;
-                        boolean vidbulasZamina = true;
-                        while (vidbulasZamina) {
-                            vidbulasZamina = false;
-                            for (int i = 0; i < arrayOfNumbers.length - 1 - povtoriv; i++) {
-                                if (arrayOfNumbers[i] < arrayOfNumbers[i + 1]) {
-                                    int temporaryVariable = arrayOfNumbers[i];
-                                    arrayOfNumbers[i] = arrayOfNumbers[i + 1];
-                                    arrayOfNumbers[i + 1] = temporaryVariable;
-                                    vidbulasZamina = true;
-                                }
-                            }
-                            povtoriv++;
-//                            System.out.println ( "povtoriv = " + povtoriv );
-
-                        }
-                        for (int i : arrayOfNumbers) {
-                            System.out.print ( i + " " );
-                        }
-                    }
-                } while (conditionsYesNo == false);
-
-            } else
-                try {
-                    more = br.readLine ();
-                    if (more.equalsIgnoreCase ( "y" )) {
-                        conditionsYesNo = true;
-                    } else {
-                        System.out.println ( "You type wrong value!" );
-                        conditionsYesNo = false;
-                    }
-                } catch (Exception e) {
-                    System.out.println ( "Wrong value" );
-                }
-
-        } while (conditionsYesNo == false);
-
-        return sortedNumbers;
+        System.out.println ( "Array After Bubble Sort" );
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print ( arr[i] + " " );
+        }
     }
 }

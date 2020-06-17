@@ -10,7 +10,7 @@ public class Employee extends AbstractHuman {
         super ();
     }
 
-    public Employee(String firstName , String secondName , String profession) {
+    Employee(String firstName , String secondName , String profession) {
         super ( firstName , secondName );
         this.profession = profession;
     }
@@ -21,24 +21,34 @@ public class Employee extends AbstractHuman {
         this.salary = salary;
     }
 
+    public String getProfession() {
+        return profession;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
     @Override
     public String getFirstName() {
+
+        //additional validation
         return super.getFirstName ();
     }
 
     @Override
     public String getLastName() {
+
+        //additional validation
         return super.getLastName ();
-    }
-
-    @Override
-    public void setFirstName(String firstName) {
-        super.setLastName ( firstName );
-    }
-
-    @Override
-    public void setLastName(String lastName) {
-        super.setLastName ( lastName );
     }
 
     @Override
@@ -51,22 +61,22 @@ public class Employee extends AbstractHuman {
         return String.format ( "The bio of employee should not be so long for %s, %s" , getFirstName () , getLastName () );
     }
 
-    public boolean equals(Object otherObject) {
+    public boolean equals(Object otherEmployee) {
 
-        if (this == otherObject) {
+        if (this == otherEmployee) {
             return true;
         }
 
-        if (otherObject == null) {
+        if (otherEmployee == null) {
             return false;
         }
 
-        if (getClass () != otherObject.getClass ()) {
+        if (getClass () != otherEmployee.getClass ()) {
             return false;
         }
 
-        Employee other = (Employee) otherObject;
-
-        return Objects.equals ( getFirstName () , other.getFirstName () ) && Objects.equals ( getLastName () , other.getLastName () );
+        Employee other = (Employee) otherEmployee;
+        return getFirstName ().equals ( other.getFirstName () ) && getLastName ().equals ( other.getFirstName () )
+                && getProfession ().equals ( other.getProfession () ) && getSalary () == (other.getSalary ());
     }
 }

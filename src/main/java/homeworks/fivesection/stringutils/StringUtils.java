@@ -1,7 +1,5 @@
 package homeworks.fivesection.stringutils;
 
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
 import java.util.regex.Pattern;
 
 public class StringUtils {
@@ -17,19 +15,33 @@ public class StringUtils {
         return pat.matcher ( email ).matches ();
     }
 
-    public static boolean isValidEmailAddressByJavaLibrary(String email) {
-        boolean result = true;
-        try {
-            InternetAddress emailAddr = new InternetAddress ( email );
-            emailAddr.validate ();
-        } catch (AddressException ex) {
-            result = false;
-        }
-        return result;
+    public static boolean isEmailValid(String email) {
+        if (email == null || email.isEmpty ()) {
+            return false;
+        } else if (email.length () > 256) {
+            return false;
+        } else if (getEmailDomain ( email ).length () > 255) {
+            return false;
+        } else if (getLocalPart ( email ).length () > 64) {
+            return false;
+        } else if (getLocalPart ( email ).length () >= 1) {
+            return false;
+        } else if (getEmailDomain ( email ).substring ( getEmailDomain ( email ).indexOf ( '.' ) , email.lastIndexOf ( email ) ).length () > 7) {
+            return false;
+        } else if (!email.contains ( "@" )) {
+            return false;
+        } else if (getLocalPart ( email ).indexOf ( '0' ) != '.') {
+            return false;
+        } else return email.lastIndexOf ( getLocalPart ( email ) )  != '.';
+
     }
 
-    public static String getEmailDomain(String fileWithExtension) {
-        return fileWithExtension.substring ( fileWithExtension.lastIndexOf ( '@' ) + 1 );
+    public static String getLocalPart(String email) {
+        return email.substring ( 0 , email.indexOf ( '@' ) );
+    }
+
+    public static String getEmailDomain(String email) {
+        return email.substring ( email.lastIndexOf ( '@' ) + 1 );
     }
 
     public static void main(String[] args) {
@@ -38,12 +50,6 @@ public class StringUtils {
             System.out.print ( "Email valid" );
         } else {
             System.out.print ( "Email invalid due to OWASP \n" );
-        }
-
-        if (isValidEmailAddressByJavaLibrary ( email )) {
-            System.out.print ( "Yes, email valid" );
-        } else {
-            System.out.print ( "No, email invalid due to Java library" );
         }
     }
 }
