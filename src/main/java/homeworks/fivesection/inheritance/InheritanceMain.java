@@ -5,7 +5,7 @@ public class InheritanceMain {
     public static void main(String[] args) {
         AbstractHuman hum = new Student ( "Manu" , "Pkiao" );
         AbstractHuman hum2 = new Employee ( "Alice" , "Kimble" , "oldProfession" );
-        Student student1 = new Student ( "Funtic", "Puntik" );
+        Student student1 = new Student ( "Funtic" , "Puntik" );
 
         AbstractHuman humanAbs = new AbstractHuman () {
             @Override
@@ -14,7 +14,6 @@ public class InheritanceMain {
                 return null;
             }
         };
-
 
         humanAbs.getBio ();
         System.out.println ( hum.getFirstName () );

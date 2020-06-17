@@ -1,7 +1,5 @@
 package homeworks.fivesection.inheritance;
 
-import java.util.Objects;
-
 public final class Student extends AbstractHuman {
 
     private String speciality;

@@ -7,7 +7,6 @@ package homeworks.fivesection.inheritance;
  */
 
 public abstract class AbstractHuman {
-
     String firstName;
     String lastName;
     String nativeLanguage;
