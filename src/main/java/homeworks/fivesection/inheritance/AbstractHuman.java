@@ -14,12 +14,12 @@ public abstract class AbstractHuman {
     AbstractHuman() {
     }
 
-    AbstractHuman(String firstName , String secondName) {
+    AbstractHuman(String firstName, String secondName) {
         this.firstName = firstName;
         this.lastName = secondName;
     }
 
-    public AbstractHuman(String firstName , String secondName , String nativeLanguage) {
+    public AbstractHuman(String firstName, String secondName, String nativeLanguage) {
         this.firstName = firstName;
         this.lastName = secondName;
         this.nativeLanguage = nativeLanguage;

@@ -2,12 +2,22 @@ package homeworks.fivesection.arrays;
 
 public class SortingArrays {
 
-    static void bubbleSort(int[] arr) {
+    private static boolean condition(int[] array, boolean ascDesc, int j) {
+        if (ascDesc) {
+            return array[j - 1] > array[j];
+        } else {
+            return array[j - 1] < array[j];
+        }
+    }
+
+    static void bubbleSort(int[] arr, boolean ascDescSorting) {
+
         int n = arr.length;
-        int temp = 0;
+        int temp;
+
         for (int i = 0; i < n; i++) {
             for (int j = 1; j < (n - i); j++) {
-                if (arr[j - 1] > arr[j]) {
+                if (condition(arr, ascDescSorting, j)) {
                     temp = arr[j - 1];
                     arr[j - 1] = arr[j];
                     arr[j] = temp;
@@ -17,19 +27,28 @@ public class SortingArrays {
     }
 
     public static void main(String[] args) {
-        int arr[] = {3 , 60 , 35 , 2 , 45 , 320 , 5};
+        int[] arr = {3, 60, 41, 14, 45, 320, 5, 99};
+        boolean asc = true;
+        boolean desc = false;
 
-        System.out.println ( "Array Before Bubble Sort" );
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print ( arr[i] + " " );
+        System.out.println("Array Before Bubble Sort");
+        for (int value : arr) {
+            System.out.print(value + " ");
         }
-        System.out.println ();
+        System.out.println();
 
-        bubbleSort ( arr );
+        bubbleSort(arr, asc);
 
-        System.out.println ( "Array After Bubble Sort" );
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print ( arr[i] + " " );
+        System.out.println("Array After asc Bubble Sort");
+        for (int value : arr) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
+        bubbleSort(arr, desc);
+
+        System.out.println("Array After desc Bubble Sort");
+        for (int value : arr) {
+            System.out.print(value + " ");
         }
     }
 }
