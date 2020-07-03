@@ -25,7 +25,8 @@ public class IntegerExercise {
             System.out.println("Illigal argument");
         }
         String fourthValue = String.valueOf(123458);
-        Integer fifth = Integer.valueOf(intValue);
+        Integer fifth =
+                Integer.valueOf(intValue);
         System.out.println("thirdValue " + thirdValue);
         System.out.println("fourthValue " + fourthValue);
     }
