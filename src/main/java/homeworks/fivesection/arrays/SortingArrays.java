@@ -2,22 +2,18 @@ package homeworks.fivesection.arrays;
 
 public class SortingArrays {
 
-    private static boolean condition(int[] array, boolean ascDesc, int j) {
-        if (ascDesc) {
-            return array[j - 1] > array[j];
-        } else {
-            return array[j - 1] < array[j];
-        }
+    private static boolean condition(int[] array, boolean asc, int j) {
+        return asc ? array[j - 1] > array[j] : array[j - 1] < array[j];
     }
 
-    static void bubbleSort(int[] arr, boolean ascDescSorting) {
+    static void bubbleSort(int[] arr, boolean asc) {
 
         int n = arr.length;
         int temp;
 
         for (int i = 0; i < n; i++) {
             for (int j = 1; j < (n - i); j++) {
-                if (condition(arr, ascDescSorting, j)) {
+                if (condition(arr, asc, j)) {
                     temp = arr[j - 1];
                     arr[j - 1] = arr[j];
                     arr[j] = temp;

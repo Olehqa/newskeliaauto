@@ -7,21 +7,21 @@ public class Employee extends AbstractHuman {
     private double salary;
 
     public Employee() {
-        super ();
+        super();
     }
 
-    Employee(String firstName , String secondName , String profession) {
-        super ( firstName , secondName );
+    Employee(String firstName, String secondName, String profession) {
+        super(firstName, secondName);
         this.profession = profession;
     }
 
-    public Employee(String firstName , String secondName , String profession , double salary) {
-        super ( firstName , secondName );
+    public Employee(String firstName, String secondName, String profession, double salary) {
+        super(firstName, secondName);
         this.profession = profession;
         this.salary = salary;
     }
 
-    public String getProfession() {
+    private String getProfession() {
         return profession;
     }
 
@@ -29,7 +29,7 @@ public class Employee extends AbstractHuman {
         this.profession = profession;
     }
 
-    public double getSalary() {
+    private double getSalary() {
         return salary;
     }
 
@@ -41,24 +41,24 @@ public class Employee extends AbstractHuman {
     public String getFirstName() {
 
         //additional validation
-        return super.getFirstName ();
+        return super.getFirstName();
     }
 
     @Override
     public String getLastName() {
 
         //additional validation
-        return super.getLastName ();
+        return super.getLastName();
     }
 
     @Override
     public void setNativeLanguage(String nativeLanguage) {
-        super.setNativeLanguage ( nativeLanguage );
+        super.setNativeLanguage(nativeLanguage);
     }
 
     @Override
     public String getBio() {
-        return String.format ( "The bio of employee should not be so long for %s, %s" , getFirstName () , getLastName () );
+        return String.format("The bio of employee should not be so long for %s, %s", getFirstName(), getLastName());
     }
 
     public boolean equals(Object otherEmployee) {
@@ -71,12 +71,12 @@ public class Employee extends AbstractHuman {
             return false;
         }
 
-        if (getClass () != otherEmployee.getClass ()) {
+        if (getClass() != otherEmployee.getClass()) {
             return false;
         }
 
         Employee other = (Employee) otherEmployee;
-        return getFirstName ().equals ( other.getFirstName () ) && getLastName ().equals ( other.getFirstName () )
-                && getProfession ().equals ( other.getProfession () ) && getSalary () == (other.getSalary ());
+        return getFirstName().equals(other.getFirstName()) && getLastName().equals(other.getFirstName())
+                && getProfession().equals(other.getProfession()) && getSalary() == (other.getSalary());
     }
 }
