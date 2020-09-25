@@ -1,10 +1,5 @@
 package homeworks.fivesection.inheritance;
 
-/*
- * AbstractHuman
- *
- * 12.06.2020
- */
 
 public abstract class AbstractHuman {
     String firstName;
