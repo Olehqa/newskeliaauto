@@ -1,7 +1,5 @@
 package homeworks.fivesection.inheritance;
 
-import java.util.Objects;
-
 public class Employee extends AbstractHuman {
     private String profession;
     private double salary;

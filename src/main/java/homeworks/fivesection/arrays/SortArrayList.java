@@ -3,6 +3,9 @@ package homeworks.fivesection.arrays;
 import java.util.ArrayList;
 
 import static homeworks.fivesection.arrays.SortingArrays.bubbleSort;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
+import static org.apache.commons.lang3.StringUtils.SPACE;
+
 
 public class SortArrayList {
     public static void main(String[] args) {
@@ -20,26 +23,18 @@ public class SortArrayList {
 
         System.out.println("Array before the bubble sort");
         for (int i : numbersToSort) {
-            System.out.print(i + " ");
+            System.out.print(i + SPACE);
         }
-        System.out.println(" ");
+        System.out.println(EMPTY);
 
-        bubbleSortList(numbersToSort, true);
-        System.out.println(" ");
         System.out.println("Array after sorting - true");
+        bubbleSortList(numbersToSort, true);
+        System.out.println(EMPTY);
 
-
-
-        bubbleSortList(numbersToSort, false);
-        System.out.println(" ");
 
         System.out.println("Array after sorting - false");
-
-
-//        System.out.println("Array after desc bubble sort");
-//        for (int i : numbersToSort) {
-//            System.out.print(i + " ");
-//        }
+        bubbleSortList(numbersToSort, false);
+        System.out.println();
     }
 
     private static void bubbleSortList(ArrayList<Integer> numbersToSort, boolean asc) {
@@ -52,7 +47,7 @@ public class SortArrayList {
         ArrayList<Integer> intList = new ArrayList<>(arr.length);
         for (int i : arr) {
             intList.add(i);
-            System.out.print(i + " ");
+            System.out.print(i + SPACE);
         }
     }
 }
