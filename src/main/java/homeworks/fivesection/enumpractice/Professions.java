@@ -102,7 +102,7 @@ public enum Professions {
         System.out.println("5.1. get DEV integer: " + DEV.getNumber());
 
         profName = Professions.convertPofToString(Professions.PLUMBER);
-        System.out.println("6. Convert PLUMBER to String: " + profName);
+        System.out.println("6. Convert PLUMBER  to String: " + profName);
     }
 
     public Integer getNumber() {
