@@ -33,7 +33,6 @@ public class StringUtils {
         } else if (getLocalPart ( email ).indexOf ( '0' ) != '.') {
             return false;
         } else return email.lastIndexOf ( getLocalPart ( email ) )  != '.';
-
     }
 
     public static String getLocalPart(String email) {
