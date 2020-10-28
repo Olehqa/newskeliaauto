@@ -1,5 +1,8 @@
 package homeworks.fivesection.enumpractice;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -33,6 +36,17 @@ public enum Professions {
         this.number = number;
     }
 
+    private static final Logger LOGGER = LogManager.getLogger(Professions.class);
+
+    public static Integer convertProfToInteger(Professions inputProf) {
+        for (Professions professions : Professions.values()) {
+            if (professions.getNumber().equals(inputProf.getNumber())) {
+                return professions.getNumber();
+            }
+        }
+        return INDEX_NOT_FOUND;
+    }
+
     public String getProfName() {
         return profName;
     }
@@ -46,26 +60,51 @@ public enum Professions {
         return null;
     }
 
-    public static Integer convertProfToInteger(Professions inputProf) {
-        for (Professions professions : Professions.values()) {
-            if (null != professions.getNumber() && null != inputProf.getNumber()
-                    && professions.getNumber().equals(inputProf.getNumber())) {
-                return professions.getNumber();
-            }
-        }
-        return INDEX_NOT_FOUND;
+    public static Professions getProfessions(String profName) {
+        return valueOf(Professions.class, profName);
     }
 
     public List<Professions> getAllOfProfessions() {
         return Arrays.asList(Professions.values());
     }
 
-    public void printAllOfProfessions() {
-        System.out.println(getAllOfProfessions());
+    public static void main(String[] args) {
+
+        LOGGER.info("getProfNameAsString: {} ", Professions.DEV.getProfNameAsString());
+
+        LOGGER.info("Proffesion {}", getProfessions("DEV"));
+
+        Professions professions = Professions.PLUMBER;
+        Integer value = professions.getNumber();
+        LOGGER.info("1. Get PLUMBER as integer value: {}", value);
+
+        String profName = professions.getProfNameAsString();
+        LOGGER.info("2. Get as string value: {}", profName);
+
+        professions = Professions.convertIntegerToProf(1);
+        LOGGER.info("3. Convert integer to profession: {}", professions);
+
+        professions = Professions.convertStringToProf("Hard Worker");
+        LOGGER.info("4. Convert string to profession: {}", professions);
+
+        value = Professions.convertProfToInteger(Professions.TOASTER);
+        LOGGER.info("5. Convert profession to integer: {}", value);
+
+        LOGGER.info("5.1. get integer: {}", DEV.getNumber());
+
+        profName = Professions.convertPofToString(Professions.PLUMBER);
+        LOGGER.info("6. Convert profession to String: {}", profName);
     }
 
-    public static Professions getProfessions(String profName) {
-        return Professions.valueOf(Professions.class, profName);
+    public Integer getNumber() {
+        if (number == null) {
+            return INDEX_NOT_FOUND;
+        }
+        return number;
+    }
+
+    public void printAllOfProfessions() {
+        LOGGER.info(getAllOfProfessions());
     }
 
     public static Professions convertStringToProf(String inputProf) {
@@ -75,41 +114,6 @@ public enum Professions {
             }
         }
         return null;
-    }
-
-    public static void main(String[] args) {
-
-        System.out.println("getProfNameAsString:" + Professions.DEV.getProfNameAsString());
-
-        System.out.println(getProfessions("DEV").toString());
-
-        Professions professions = Professions.PLUMBER;
-        Integer value = professions.getNumber();
-        System.out.println("1. Get PLUMBER as integer value: " + value);
-
-        String profName = professions.getProfNameAsString();
-        System.out.println("2. Get PLUMBER as string value: " + profName);
-
-        professions = Professions.convertIntegerToProf(1);
-        System.out.println("3. Convert integer to profession: " + professions);
-
-        professions = Professions.convertStringToProf("Hard Worker");
-        System.out.println("4. Convert string PLUMBER to profession: " + professions);
-
-        value = Professions.convertProfToInteger(Professions.DEV);
-        System.out.println("5. Convert DEV profession to integer: " + value);
-
-        System.out.println("5.1. get DEV integer: " + DEV.getNumber());
-
-        profName = Professions.convertPofToString(Professions.PLUMBER);
-        System.out.println("6. Convert PLUMBER  to String: " + profName);
-    }
-
-    public Integer getNumber() {
-        if (null == number) {
-            return INDEX_NOT_FOUND;
-        }
-        return number;
     }
 
     public static String convertPofToString(Professions inputProf) {
