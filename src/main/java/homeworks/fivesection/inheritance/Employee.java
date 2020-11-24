@@ -1,5 +1,6 @@
 package homeworks.fivesection.inheritance;
 
+
 public class Employee extends AbstractHuman {
     private String profession;
     private double salary;
@@ -38,19 +39,20 @@ public class Employee extends AbstractHuman {
     @Override
     public String getFirstName() {
 
-        //additional validation
+        System.out.println("should be additional validation");
         return super.getFirstName();
     }
 
     @Override
     public String getLastName() {
 
-        //additional validation
+        System.out.println("In this place should be additional validation");
         return super.getLastName();
     }
 
     @Override
     public void setNativeLanguage(String nativeLanguage) {
+        System.out.println("if we override method we should add smth additional");
         super.setNativeLanguage(nativeLanguage);
     }
 

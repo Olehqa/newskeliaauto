@@ -7,27 +7,49 @@
     <artifactId>skelia.alpega.auto</artifactId>
     <groupId>pdp</groupId>
     <version>1.0-SNAPSHOT</version>
+
     <properties>
         <project.build.encoding>UTF-8</project.build.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <org.apache.logging.log4j.version>2.11.0</org.apache.logging.log4j.version>
+        <org.apache.commons.version>3.10</org.apache.commons.version>
+        <org.apache.maven.plugins.version>3.5.1</org.apache.maven.plugins.version>
+        <sourse.target.version>1.8</sourse.target.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${org.apache.commons.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${org.apache.logging.log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${org.apache.logging.log4j.version}</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>${org.apache.maven.plugins.version}</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${sourse.target.version}</source>
+                    <target>${sourse.target.version}</target>
                 </configuration>
             </plugin>
         </plugins>
 
-
     </build>
-    <dependencies>
-    </dependencies>
-
 
 </project>
